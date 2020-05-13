@@ -493,7 +493,7 @@ public RateLimiterRequestHandlerAdvice rateLimiterRequestHandlerAdvice() {
 }
 
 @ServiceActivator(inputChannel = "requestChannel", outputChannel = "resultChannel",
-        adviceChain = "rateLimiterRequestHandlerAdvice")
+		adviceChain = "rateLimiterRequestHandlerAdvice")
 public String handleRequest(String payload) {
     ...
 }
@@ -667,10 +667,10 @@ Consider the following configuration:
 [source,xml]
 ----
 <some-reply-producing-endpoint ... >
-    <request-handler-advice-chain>
+    <int:request-handler-advice-chain>
         <tx:advice ... />
         <ref bean="myHandleMessageAdvice" />
-    </request-handler-advice-chain>
+    </int:request-handler-advice-chain>
 </some-reply-producing-endpoint>
 ----
 ====
